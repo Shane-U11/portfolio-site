@@ -1,0 +1,40 @@
+{
+  "name": "source-code",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "migrations:run": "npx prisma migrate dev --schema=./prisma/schema.prisma",
+    "migration:create": "npx prisma migrate dev --create-only"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
+    "@react-spring/parallax": "^9.7.3",
+    "@supabase/ssr": "^0.3.0",
+    "@supabase/supabase-js": "^2.43.2",
+    "@types/mapbox-gl": "^3.1.0",
+    "deck.gl": "^9.0.14",
+    "mapbox-gl": "^3.3.0",
+    "next": "14.2.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-map-gl": "^7.1.7",
+    "react-scroll-parallax": "^3.4.5",
+    "react-spring": "^9.7.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.2",
+    "prisma": "^5.14.0",
+    "typescript": "^5"
+  }
+}
