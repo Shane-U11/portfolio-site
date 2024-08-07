@@ -1,5 +1,3 @@
-
-
 #textblock {
   background-color: #003662;
   height: 100vh;
@@ -20,51 +18,53 @@
 }
 
 #textblock-content {
-  color:  white;
+  color: white;
   font-size: 20px;
   text-align: center;
 }
 
 #textblock-footer {
-  color:  white;
+  color: white;
   font-size: 15px;
   font-weight: 400;
   position: fixed;
   width: 100%;
   bottom: 0px;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   margin-bottom: 20px;
 
 }
 
 #textblock-devsense {
   text-decoration: none;
-  color:  white;
+  color: white;
   font-size: 15px;
   font-weight: 600;
 }
 
-.animation, .animation_layer {
-    height: 1000px;
+.animation,
+.animation_layer {
+  height: 1000px;
 }
 
 .animation {
   display: block;
-    position: relative;
-    z-index: 10;
+  position: relative;
+  z-index: 10;
 }
 
 .animation_layer {
-    background-position: bottom center;
-    background-size: auto 1038px;
-    background-repeat: repeat-x;
-    width: 100%;
-    position: absolute;
+  background-position: bottom center;
+  background-size: auto 1038px;
+  background-repeat: repeat-x;
+  width: 100%;
+  position: absolute;
 }
+
 .animation_layer.parallax {
-    position: fixed;
+  position: fixed;
 }
 
 #artback {
@@ -102,7 +102,6 @@
 #manonmountain {
   background-image: url(/man_on_mountain.png);
 }
-
 
 
 

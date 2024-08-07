@@ -1,6 +1,6 @@
 "use client";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import "../page.module.css";
+import "../homeStyles.css";
 
 const Home = () => {
     return (

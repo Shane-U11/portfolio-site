@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
             .select("visitCount")
             .single()
 
-        let visitCount = 0
+        let visitCount = 1
 
         if (visitorCounter.data) {
             visitCount = visitorCounter.data.visitCount + 1

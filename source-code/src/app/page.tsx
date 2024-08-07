@@ -1,22 +1,19 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import Dashboard from "./components/Dashboard";
-
 "use client";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import "./page.module.css";
+// import TextBlock from "./textBlock";
+import "./homeStyles.css";
 
 const Home = () => {
   return (
-    <div className="App">
-      <Parallax pages={2} style={{ top: "0", left: "0" }} className="animation">
+    <div>
+      <Parallax pages={2} className="animation">
         <ParallaxLayer offset={0} speed={0.25}>
           <div className="animation_layer parallax" id="artback"></div>
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={0.3}>
           <div className="animation_layer parallax" id="mountain"></div>
         </ParallaxLayer>
-
+       
         <ParallaxLayer offset={0} speed={0.3}>
           <div className="animation_layer parallax" id="jungle1"></div>
         </ParallaxLayer>
@@ -47,7 +44,7 @@ const Home = () => {
           </div>
         </ParallaxLayer>
         <ParallaxLayer offset={1} speed={0.25}>
-          <p> hello </p>
+          {/* <TextBlock /> */}
         </ParallaxLayer>
       </Parallax>
     </div>

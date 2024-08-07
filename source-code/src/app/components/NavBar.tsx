@@ -14,39 +14,42 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import Link from "next/link";
+import { useRouter } from 'next/navigation'
 
-// Our application's pages
 const pages = [
   { label: "Takehome Tests", slug: "/takehome-tests" },
   { label: "Visitors", slug: "/visitors" },
   { label: "Musings", slug: "/musings" },
-  { label: "Survey", slug: "/subscribersSurvey"}
+  { label: "Survey", slug: "/subscribersSurvey" }
 ];
 
-// Used for protected routes 
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Dashboard"];
 
 const ResponsiveAppBar = () => {
-  const [anchorNav, setAnchorNav] = React.useState<null | HTMLElement>(
-    null
-  );
-  const [anchorUser, setAnchorUser] = React.useState<null | HTMLElement>(
-    null
-  );
+  const [anchorNav, setAnchorNav] = React.useState<null | HTMLElement>(null);
+  const [anchorUser, setAnchorUser] = React.useState<null | HTMLElement>(null);
+
+  const router = useRouter();
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorNav(event.currentTarget);
   };
+
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
-      setAnchorNav(null);
+    setAnchorNav(null);
   };
 
   const handleCloseUserMenu = () => {
     setAnchorUser(null);
+  };
+
+  const handleMenuItemClick = (slug: string) => {
+    router.push(slug);
+    handleCloseUserMenu();
   };
 
   return (
@@ -101,7 +104,11 @@ const ResponsiveAppBar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-            
+              {pages.map(({ label, slug }) => (
+                <MenuItem key={label} onClick={() => handleMenuItemClick(slug)}>
+                  <Typography textAlign="center">{label}</Typography>
+                </MenuItem>
+              ))}
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
@@ -159,7 +166,7 @@ const ResponsiveAppBar = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem key={setting} onClick={() => handleMenuItemClick('/')}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
